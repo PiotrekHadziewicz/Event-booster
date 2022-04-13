@@ -1,0 +1,47 @@
+/* PAGINATION */
+.pagination {
+  position: absolute;
+  width: 233px;
+  height: 30px;
+  left: 523px;
+  top: 2227px;
+  background-color: rgb(78, 67, 67);
+  display: flex;
+  justify-content: center;
+}
+
+.pagination__rect {
+  width: 30px;
+  height: 30px;
+  background-color: rgb(32, 36, 32);
+  line-height: 30px;
+  text-align: center;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  color: #FFFFFF;
+}
+
+.pagination__rect:not(:last-child) {
+  margin-right: 4px;
+}
+
+/* ALL RIGHTS... */
+
+.all-rights {
+  position: absolute;
+  width: 521px;
+  height: 40px;
+  left: 379px;
+  top: 2317px;
+
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #939393;
+  /* background-color: aquamarine; */
+}

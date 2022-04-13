@@ -1,0 +1,42 @@
+<header class="header">
+  <div class="header-content">
+    <div class="logo">
+      <a href="">
+        <img class="logo-img" alt="logo" src="./images/logo-mobile.png" srcset="
+            ./images/logo-mobile.png    107w,
+            ./images/logo-mobile@2x.png 214w,
+            ./images/logo-tablet.png       180w,
+            ./images/logo-tablet@2x.png    360w,
+            ./images/logo.png      238w,
+            ./images/logo@2x.png   476w
+          " sizes="(min-width: 1280px) 18vw, (min-width: 768px) 23vw, (min-width: 320px) 33vw, 25vw" />
+      </a>
+    </div>
+
+    <h1 class="header-title">FIND BEST EVENTS AROUND THE WORLD</h1>
+
+    <fieldset class="header-fieldset">
+      <div class="header-field">
+
+        <input type="text" name="searchEvent" placeholder="Start searching" class="header-input search-input" />
+
+        <button type="submit" class="search__submit">
+          <i class="fas fa-search search__icon"></i>
+        </button>
+
+      </div>
+      <div class="header-field">
+
+        <select class="header-input choose-country" name="countryName">
+          <option value="0" selected>Choose country</option>
+        </select>
+
+        <button type="submit" class="search__submit">
+          <i class="fas fa-caret-down"></i>
+        </button>
+
+      </div>
+    </fieldset>
+
+  </div>
+</header>

@@ -1,0 +1,100 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.header {
+  position: absolute;
+  width: 1280px;
+  height: 446px;
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0px; 
+  top: 0px;
+} 
+
+@media screen and (max-width: 767px) {
+  .header {
+    background-image: url(../images/header-image-mobile.png);
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width:1051px) {
+  .header { 
+    background-image: url(../images/header-image-tablet.png);
+  }
+}
+
+@media screen and (min-width: 1052px) {
+  .header {
+    background-image: url(../images/header-image-desktop.png);
+  }
+}
+
+.logo {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 100;
+  display: block; 
+}
+
+.header-title {
+  position: absolute;
+  width: 620px;
+  height: 122px;
+  left: 345px;
+  top: 40px;
+  font-weight: 900;
+  font-size: 50px;
+  line-height: 61px;
+  text-align: center;
+  color: #DC56C5;
+}
+
+.header-fieldset {
+  position: absolute;
+  left: 355px;
+  top: 214px;
+  display: flex;
+  justify-content: center;
+  border: none;
+}
+
+.header-field {
+  position: relative;
+}
+
+.header-input {
+  font: inherit;
+  border: none;
+  width: 270px;
+  height: 40px;
+  line-height: 20px;
+  border-radius: 500px;
+  font-size: 16px;
+  padding-left: 20px;
+  outline: none;
+  transition: all 0.2s;  
+  appearance: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #939393;
+}
+
+.header-input::placeholder {
+  color: #939393;
+}
+
+.search__submit {
+  border: none;
+  background-color: initial;
+  outline: none;
+  font-size: 15px;
+  cursor: pointer;
+  width:30px;
+  height:30px;
+  position: absolute;
+  top: 7px;
+  right: 5px;
+  color: #939393;  
+}
