@@ -1,18 +1,30 @@
 .main-field {
-  position: absolute;
-  width: 1280px;
-  height: 1930px;
-  left: 0px;
-  top: 446px;
-  background: #0E0E0E;
+  width: 100vw;
 }
 
 .main-events {
-  position: absolute;
   width: 946px;
   height: 1760px;
-  left: 173px;
-  top: -60px;
+  margin-left: auto;
+  margin-right: auto; 
   border: 1px solid #2e2d2d;
 }
 
+/* -----------TABLET--------- */
+
+@media screen and (min-width: 768px) and (max-width:1051px) {
+  .main-events {
+    width: 768px;
+    height: 2582px;
+  }
+}
+
+
+/* -----------MOBILE-------- */
+@media screen and (max-width: 767px) {
+  .main-events {
+    width: 320px;
+    height: 2786px;
+    margin-top: 10px;
+  }
+}
