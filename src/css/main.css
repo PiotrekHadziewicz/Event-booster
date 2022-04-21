@@ -1,18 +1,47 @@
+p{
+  margin: 2.5px 0px;
+}
+
 .main-field {
-  position: absolute;
-  width: 1280px;
-  height: 1930px;
-  left: 0px;
-  top: 446px;
   background: #0E0E0E;
+  width: 1280px;
+  display: flex;
+  justify-content: center;
+  flex-basis: calc(100% / 4);
+  flex-wrap: wrap;
+  gap: 70px;
 }
 
 .main-events {
-  position: absolute;
-  width: 946px;
-  height: 1760px;
-  left: 173px;
-  top: -60px;
-  border: 1px solid #2e2d2d;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 180px;
 }
 
+.main-events-img{
+  width: 180px;
+  height: 227px;
+  border-radius: 50px 0px;
+}
+
+.main-events-name,.main-events-date,.main-events-place{
+  font-family: 'Montserrat';
+  font-size: 16px;
+  line-height: 1.25;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.main-events-name{
+  font-weight: 700;
+  color: #DC56C5;
+}
+.main-events-date{
+  font-weight: 400;
+}
+.main-events-place{
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.21;
+}
