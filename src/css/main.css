@@ -12,7 +12,7 @@
 
 /* -----------TABLET--------- */
 
-@media screen and (min-width: 768px) and (max-width:1051px) {
+@media screen and (min-width: 768px) and (max-width:1280px) {
   .main-events {
     width: 768px;
     height: 2582px;
