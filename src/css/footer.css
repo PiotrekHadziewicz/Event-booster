@@ -1,13 +1,11 @@
 /* PAGINATION */
 .pagination {
-  position: absolute;
   width: 233px;
   height: 30px;
-  left: 523px;
-  top: 2227px;
   background-color: rgb(78, 67, 67);
   display: flex;
   justify-content: center;
+  margin: 50px auto;
 }
 
 .pagination__rect {
@@ -30,11 +28,8 @@
 /* ALL RIGHTS... */
 
 .all-rights {
-  position: absolute;
   width: 521px;
   height: 40px;
-  left: 379px;
-  top: 2317px;
 
   font-family: 'Montserrat';
   font-style: normal;
@@ -43,5 +38,6 @@
   line-height: 20px;
   text-align: center;
   color: #939393;
+  margin: 50px auto;
   /* background-color: aquamarine; */
 }
