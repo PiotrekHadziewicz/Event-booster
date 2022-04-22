@@ -6,9 +6,7 @@ body {
 .header {
   width: 100vw;
   height: 446px;
-  margin-top: 0;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   background-image: url(../images/header-image-desktop.png);
   background-position: center;
   background-repeat: no-repeat;
@@ -17,19 +15,13 @@ body {
 
 .logo-img {
   position: absolute;
-  max-width: 239px;
-  max-height: 201px;
-  min-width: 239px;
-  min-height: 201px;
+  width: 239px;
+  height: 201px;
 }
 
 .header-title {
-  margin-top: 0;
-  margin-bottom: 60px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  margin: 0 auto 60px;
+  padding: 30px 0;
   width: 620px;
   height: 167px;
   font-weight: 900;
@@ -40,8 +32,6 @@ body {
 }
 
 .header-fieldset {
-  margin-left: auto;
-  margin-right: auto;
   width: 540px;
   display: flex;
   justify-content: center;
@@ -90,7 +80,7 @@ body {
 
 
 /* -----------TABLET--------- */
-@media screen and (min-width: 768px) and (max-width:1051px) {
+@media screen and (min-width: 768px) and (max-width:1280px) {
   .header { 
     width: 100vw;
     background-image: url(../images/header-image-tablet.png);  
@@ -105,22 +95,20 @@ body {
   }
 
   .logo-img {
-    max-width: 179px;
-    max-height: 151px;
-    min-width: 179px;
-    min-height: 151px;
+    width: 179px;
+    height: 151px;
   }
 
   .header-title {
-    margin: 0 auto 60px;
+    margin: 0 auto 30px;
     width: 353px;
-    height: 120px;
+    height: 150px;
     font-size: 30px;
     line-height: 37px;
   }
 
   .header-fieldset {
-    padding-top: 30px; 
+    padding-top: 10px; 
   }
 
   .search__submit {
@@ -146,10 +134,8 @@ body {
   }
 
   .logo-img {
-    max-width: 107px;
-    max-height: 90px;
-    min-width: 107px;
-    min-height: 90px;
+    width: 107px;
+    height: 90px;
   }
 
   .header-title {
