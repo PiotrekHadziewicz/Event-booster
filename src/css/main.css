@@ -1,30 +1,5 @@
-.main-field {
-  width: 100vw;
-}
-
-.main-events {
-  width: 946px;
-  height: 1760px;
-  margin-left: auto;
-  margin-right: auto; 
-  border: 1px solid #2e2d2d;
-}
-
-/* -----------TABLET--------- */
-
-@media screen and (min-width: 768px) and (max-width:1280px) {
-  .main-events {
-    width: 768px;
-    height: 2582px;
-  }
+p{
+  margin: 2.5px 0px;
 }
 
 
-/* -----------MOBILE-------- */
-@media screen and (max-width: 767px) {
-  .main-events {
-    width: 320px;
-    height: 2786px;
-    margin-top: 10px;
-  }
-}

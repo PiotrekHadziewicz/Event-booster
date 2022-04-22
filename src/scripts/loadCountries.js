@@ -332,7 +332,7 @@ const countries = [{
   }
 ]
 
-const loadCountries = document.querySelector(".choose-country");
+export const loadCountries = document.querySelector(".choose-country");
 
 for (let i = 0; i < countries.length; i++) {
   loadCountries.innerHTML = loadCountries.innerHTML + '<option value="' + countries[i].countryCode + '">' + countries[i].name + '</option>';
