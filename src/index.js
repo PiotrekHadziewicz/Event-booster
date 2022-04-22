@@ -43,6 +43,7 @@ function showResults(resp) {
     if (resp.data.page.totalElements == 0) {
         Notiflix.Notify.failure("Sorry, there are no events matching your search query. Please try again.");
     } else {
+        console.log(resp);
         const divOfEvents = document.querySelector(".main-field");
         divOfEvents.innerHTML = "";
         for (const event of resp.data._embedded.events) {
@@ -64,7 +65,6 @@ function showResults(resp) {
             singleEventFragment.append(imgEvent, eventName, eventDate, eventPlace);
             singleEvent.append(singleEventFragment);
             divOfEvents.append(singleEvent);
-            console.log(event);
         }
     }
 }
