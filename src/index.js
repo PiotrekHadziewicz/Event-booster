@@ -52,7 +52,14 @@ function showResults(resp) {
             const singleEventFragment = document.createDocumentFragment();
             const imgEvent = document.createElement("img");
             imgEvent.classList.add("main-events-img");
-            imgEvent.setAttribute("src", event.images[0].url);
+            let imgUrl;
+            for (const image of event.images) {
+                if (image.height == 225) {
+                    imgUrl = image.url;
+                    break;
+                }
+            }
+            imgEvent.setAttribute("src", imgUrl);
             const eventName = document.createElement("p");
             eventName.classList.add("main-events-name");
             eventName.textContent = event.name;
@@ -62,7 +69,9 @@ function showResults(resp) {
             const eventPlace = document.createElement("p");
             eventPlace.classList.add("main-events-place");
             eventPlace.textContent = event._embedded.venues[0].city.name;
-            singleEventFragment.append(imgEvent, eventName, eventDate, eventPlace);
+            const eventBorder = document.createElement("div");
+            eventBorder.classList.add("border");
+            singleEventFragment.append(eventBorder, imgEvent, eventName, eventDate, eventPlace);
             singleEvent.append(singleEventFragment);
             divOfEvents.append(singleEvent);
         }
