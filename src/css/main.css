@@ -18,6 +18,7 @@ p{
   flex-direction: column;
   flex-wrap: wrap;
   width: 180px;
+  position: relative;
 }
 
 .border{
@@ -25,13 +26,16 @@ p{
   height: 143px;
   border: 1px solid rgba(220, 86, 197, 0.3);
   border-radius: 50px 0px;
-  transform: translate(41px, 130px);
+  position: absolute;
+  top: -13px;
+  left: 41px;
 }
 
 .main-events-img {
   width: 180px;
   height: 225px;
   border-radius: 50px 0px;
+  object-fit: cover;
 }
 
 .main-events-name,
@@ -93,7 +97,8 @@ p{
   .border {
     width: 108px;
     height: 101px;
-    transform: translate(30px, 92px);
+    top: -9px;
+    left: 30px;
   }
   .main-events-img {
     width: 128px;
