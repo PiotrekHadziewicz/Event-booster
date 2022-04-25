@@ -1,0 +1,273 @@
+/* ALL-ROUND & DESKTOP */
+
+.backdrop {
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  background: rgba(32, 13, 29, 0.6);
+  backdrop-filter: blur(3px);
+  pointer-events: none;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 930px;
+  height: 1023px;
+  background: #fff2fd;
+  border-radius: 300px 0px;
+}
+
+.modal__close-btn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
+  border: 0px;
+  background-color: #fff2fd;
+}
+
+.modal__close-btn img {
+  width: 25px;
+  height: 25px;
+}
+
+.modal__icon {
+  width: 132px;
+  height: 132px;
+  position: absolute;
+  left: 399px;
+  top: 62px;
+}
+
+.modal__picture {
+  width: 360px;
+  height: 641px;
+  position: absolute;
+  left: 30px;
+  top: 235px;
+}
+
+.modal__info {
+  position: absolute;
+  left: 450px;
+  top: 235px;
+  width: 450px;
+  list-style: none;
+}
+
+.modal__info-element__name {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  color: #dc56c5;
+  margin-bottom: 7px;
+}
+
+.modal__info-element__text {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #0e0e0e;
+  margin-bottom: 20px;
+}
+
+.modal__info-element__tickets-content {
+  list-style: none;
+}
+
+.modal__info-element__ticket {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.modal__info-element__ticket-barcode {
+  margin-right: 13px;
+}
+
+.modal__info-element__ticket-text {
+  margin-right: 150px;
+}
+
+.modal__info-element__ticket-btn {
+  margin-top: 20px;
+  margin-bottom: 31px;
+  width: 145px;
+  height: 40px;
+  background: #4c00fe;
+  border-radius: 5px;
+  color: white;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.modal__more-btn {
+  position: absolute;
+  top: 921px;
+  left: 337px;
+  width: 255px;
+  height: 40px;
+  border: 1px solid #4c00fe;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #4c00fe;
+  background: #fff2fd;
+}
+
+/* TABLET */
+
+@media screen and (min-width: 768px) and (max-width: 1280px) {
+  .modal {
+    width: 595px;
+    height: 831px;
+  }
+
+  .modal__close-btn {
+    top: 25px;
+    right: 25px;
+  }
+
+  .modal__close-btn img {
+    width: 17px;
+    height: 17px;
+  }
+
+  .modal__icon {
+    width: 70px;
+    height: 70px;
+    left: 263px;
+    top: 28px;
+  }
+
+  .modal__picture {
+    width: 233px;
+    height: 416px;
+    left: 50px;
+    top: 141px;
+  }
+
+  .modal__info {
+    left: 313px;
+    top: 141px;
+    width: 265px;
+  }
+
+  .modal__info-element__name {
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 5px;
+  }
+
+  .modal__info-element__text {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 10px;
+  }
+
+  .modal__info-element__ticket-text {
+    margin-right: 30px;
+  }
+
+  .modal__info-element__ticket-btn {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  .modal__more-btn {
+    top: 735px;
+    left: 170px;
+  }
+}
+
+/* MOBILE */
+
+@media screen and (max-width: 767px) {
+  .modal {
+    width: 272px;
+    height: 915px;
+    border-radius: 150px 0px;
+  }
+
+  .modal__close-btn {
+    top: 25px;
+    right: 25px;
+  }
+
+  .modal__close-btn img {
+    width: 17px;
+    height: 17px;
+  }
+
+  .modal__info-element__name {
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 5px;
+  }
+
+  .modal__info-element__text {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 10px;
+  }
+
+  .modal__more-btn {
+    width: 230px;
+    top: 771px;
+    left: 20px;
+  }
+
+  .modal__icon {
+    width: 102px;
+    height: 102px;
+    left: 86px;
+    top: 75px;
+  }
+
+  .modal__picture {
+    display: none;
+  }
+
+  .modal__info {
+    left: 12px;
+    top: 195px;
+    width: 243px;
+    text-align: center;
+  }
+
+  .modal__info-element__ticket {
+    justify-content: center;
+  }
+
+  .modal__info-element__ticket-text {
+    margin-right: 0px;
+  }
+
+  .modal__info-element__ticket-btn {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+}
