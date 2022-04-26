@@ -13,7 +13,6 @@ function openModal(event) {
   const idOfEvent = event.target.dataset.id;
   axiosQueryModal(idOfEvent)
     .then(resp => { 
-      console.log(resp);
       showResultsModal(resp);
     })
     .catch(error => { 
@@ -29,5 +28,6 @@ function closeModal(event) {
 
 setInterval(() => {
   $mainEvents.addEventListener('click', openModal);
+  if($closeModalBtn)
   $closeModalBtn.addEventListener('click', closeModal);
 }, 500);
