@@ -19,6 +19,7 @@ p{
   flex-wrap: wrap;
   width: 180px;
   position: relative;
+  cursor: pointer;
 }
 
 .border{
