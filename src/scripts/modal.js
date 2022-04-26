@@ -1,13 +1,24 @@
+import { axiosQueryModal, showResultsModal } from "..";
+
 const $mainEvents = document.querySelector('.main-field');
 const $backdrop = document.querySelector('.backdrop');
 const $modal = document.querySelector('.modal');
-const $closeModalBtn = document.querySelector('.modal__close-btn');
+let $closeModalBtn;
 
 function openModal(event) {
   event.preventDefault();
-  console.log(event.target);
   $backdrop.hidden = false;
   $modal.hidden = false;
+  $closeModalBtn = document.querySelector('.modal__close-btn');
+  const idOfEvent = event.target.dataset.id;
+  axiosQueryModal(idOfEvent)
+    .then(resp => { 
+      console.log(resp);
+      showResultsModal(resp);
+    })
+    .catch(error => { 
+      console.log(error);
+    });
 }
 
 function closeModal(event) {
@@ -16,5 +27,7 @@ function closeModal(event) {
   $modal.hidden = true;
 }
 
-$mainEvents.addEventListener('click', openModal);
-$closeModalBtn.addEventListener('click', closeModal);
+setInterval(() => {
+  $mainEvents.addEventListener('click', openModal);
+  $closeModalBtn.addEventListener('click', closeModal);
+}, 500);

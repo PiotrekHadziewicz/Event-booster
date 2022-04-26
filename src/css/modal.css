@@ -20,13 +20,27 @@
 
 .modal {
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 930px;
-  height: 1023px;
   background: #fff2fd;
   border-radius: 300px 0px;
+}
+
+.modal-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 62px 0;
+}
+
+.container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 60px;
+  margin-top: 41px;
 }
 
 .modal__close-btn {
@@ -46,23 +60,17 @@
 .modal__icon {
   width: 132px;
   height: 132px;
-  position: absolute;
-  left: 399px;
-  top: 62px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .modal__picture {
   width: 360px;
   height: 641px;
-  position: absolute;
-  left: 30px;
-  top: 235px;
+  object-fit: cover;
 }
 
 .modal__info {
-  position: absolute;
-  left: 450px;
-  top: 235px;
   width: 450px;
   list-style: none;
 }
@@ -121,10 +129,7 @@
 }
 
 .modal__more-btn {
-  position: absolute;
-  top: 921px;
-  left: 337px;
-  width: 255px;
+  /* width: 255px; */
   height: 40px;
   border: 1px solid #4c00fe;
   box-sizing: border-box;
@@ -133,9 +138,14 @@
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
-  line-height: 20px;
+  /* line-height: 20px; */
   color: #4c00fe;
   background: #fff2fd;
+  margin-top: 45px;
+}
+.ticket-link{
+  color: #ffffff;
+  text-decoration: none;
 }
 
 /* TABLET */
@@ -143,7 +153,6 @@
 @media screen and (min-width: 768px) and (max-width: 1280px) {
   .modal {
     width: 595px;
-    height: 831px;
   }
 
   .modal__close-btn {
@@ -159,20 +168,14 @@
   .modal__icon {
     width: 70px;
     height: 70px;
-    left: 263px;
-    top: 28px;
   }
 
   .modal__picture {
     width: 233px;
     height: 416px;
-    left: 50px;
-    top: 141px;
   }
 
   .modal__info {
-    left: 313px;
-    top: 141px;
     width: 265px;
   }
 
@@ -196,11 +199,6 @@
     margin-top: 10px;
     margin-bottom: 20px;
   }
-
-  .modal__more-btn {
-    top: 735px;
-    left: 170px;
-  }
 }
 
 /* MOBILE */
@@ -208,7 +206,6 @@
 @media screen and (max-width: 767px) {
   .modal {
     width: 272px;
-    height: 915px;
     border-radius: 150px 0px;
   }
 
@@ -235,16 +232,14 @@
   }
 
   .modal__more-btn {
-    width: 230px;
-    top: 771px;
-    left: 20px;
+    /* width: 230px; */
+    margin-top: 25px;
+    font-size: 15px;
   }
 
   .modal__icon {
     width: 102px;
     height: 102px;
-    left: 86px;
-    top: 75px;
   }
 
   .modal__picture {
@@ -252,8 +247,6 @@
   }
 
   .modal__info {
-    left: 12px;
-    top: 195px;
     width: 243px;
     text-align: center;
   }
