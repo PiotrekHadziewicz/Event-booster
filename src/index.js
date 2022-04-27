@@ -36,7 +36,7 @@ submit.addEventListener("click", () => {
 });
 
 
-async function axiosQuery(values, code) {
+async function axiosQuery(values, code, page) {
   return await axios({
 		method: "GET",
 		url: 'https://app.ticketmaster.com/discovery/v2/events',
@@ -45,11 +45,11 @@ async function axiosQuery(values, code) {
 			keyword: values,
             countryCode: code,
             size: 20,
-            page:2,
+            page:page,
 		}
   })
 }
-
+let page;
 function showResults(resp) {
     if (resp.data.page.totalElements == 0) {
         Notiflix.Notify.failure("Sorry, there are no events matching your search query. Please try again.");
@@ -57,7 +57,7 @@ function showResults(resp) {
         console.log(resp);
         if (resp.data.page.totalElements > 0){
           let totalPages = resp.data.page.totalPages;
-          let page = resp.data.page.number;
+          page = resp.data.page.number+1;
           console.log(totalPages);
           console.log(page);
           paginacja(totalPages, page);
@@ -172,9 +172,9 @@ function paginacja(totalPages, page){
 
   let liTag = '';
   let activeLi;
-  let beforePages = page - 1;
+  let beforePages = page;
   let afterPages = page + 1;
-  if(page > -1){
+  if(page > 1){
     liTag += `<li class="pagination__rect btn-prev" id="prev"><span><i class="fas fa-angle-left"></i></span></li>`;
     console.log("powyżej liczby stron");
   }
