@@ -18,6 +18,7 @@ loadCountries.addEventListener('change', function (e) {
 axiosQuery(searchValue, countryId)
         .then(resp => {
             showResults(resp);
+            
         })
         .catch(error => { 
             console.log(error);
@@ -29,6 +30,7 @@ submit.addEventListener("click", () => {
     axiosQuery(searchValue, countryId)
         .then(resp => {
             showResults(resp);
+            
         })
         .catch(error => { 
             console.log(error);
@@ -43,12 +45,18 @@ async function axiosQuery(values, code, page) {
 		params: {
 			apikey: 'N1khMiE51sBKpy9djrTkY8r219alCPAN',
 			keyword: values,
-            countryCode: code,
-            size: 20,
-            page:page,
+      countryCode: code,
+      size: 20,
+      page:page,
 		}
   })
 }
+let obiektApi;
+console.log(obiektApi);
+function cos(){
+}
+
+
 let page;
 function showResults(resp) {
     if (resp.data.page.totalElements == 0) {
@@ -160,13 +168,13 @@ const pagiUl = document.querySelector("#pagination");
 const btnPrev = document.querySelector("#prev");
 const nextId = document.querySelector("#next");
 
-btnPrev.addEventListener("click", ()=>{
-  paginacja(totalPages, page-1)
-});
+// btnPrev.addEventListener("click", ()=>{
+//   paginacja(totalPages, page-1)
+// });
 
-nextId.addEventListener("click", ()=>{
-  paginacja(totalPages, page+1)
-});
+// nextId.addEventListener("click", ()=>{
+//   paginacja(totalPages, page+1)
+// });
 
 function paginacja(totalPages, page){
 
