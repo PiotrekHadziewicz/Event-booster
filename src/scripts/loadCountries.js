@@ -1,4 +1,4 @@
-const countries = [{
+export const countries = [{
     name: "United States Of America",
     countryCode: "US"
   },
@@ -331,11 +331,3 @@ const countries = [{
     countryCode: "VE"
   }
 ]
-
-export const loadCountries = document.querySelector(".choose-country");
-
-
-for (let i = 0; i < countries.length; i++) {
-  console.log("Źle");
-  loadCountries.innerHTML = loadCountries.innerHTML + '<option value="' + countries[i].countryCode + '">' + countries[i].name + '</option>';
-}

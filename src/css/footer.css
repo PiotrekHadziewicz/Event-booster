@@ -60,3 +60,11 @@
   margin: 50px auto;
   /* background-color: aquamarine; */
 }
+
+/* Mobile */
+
+@media screen and (max-width: 767px) {
+  .all-rights {
+    width: 290px;
+  }
+}

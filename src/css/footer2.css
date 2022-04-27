@@ -1,0 +1,29 @@
+.all-rights {
+    position: relative;
+    overflow: hidden;
+}
+
+.all-rights:hover .overlay {
+    transform: translatey(0);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0E0E0E;
+    padding-right: 0px;
+
+    transform: translatey(100%);
+    transition: transform 400ms ease;
+}
+
+.overlay>p {
+    color: rgb(233, 227, 227);
+    padding: 0px;
+    margin: 0;
+    font-size: 13px;
+    font-family: 'Montserrat';
+}
