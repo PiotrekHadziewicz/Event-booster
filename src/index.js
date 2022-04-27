@@ -24,6 +24,7 @@ loadCountries.addEventListener('change', function (e) {
 axiosQuery(searchValue, countryId)
         .then(resp => {
             showResults(resp);
+            
         })
         .catch(error => { 
             console.log(error);
@@ -35,6 +36,7 @@ submit.addEventListener("click", () => {
     axiosQuery(searchValue, countryId)
         .then(resp => {
             showResults(resp);
+            
         })
         .catch(error => { 
             console.log(error);
@@ -42,24 +44,38 @@ submit.addEventListener("click", () => {
 });
 
 
-async function axiosQuery(values, code) {
+async function axiosQuery(values, code, page) {
   return await axios({
 		method: "GET",
 		url: 'https://app.ticketmaster.com/discovery/v2/events',
 		params: {
 			apikey: 'N1khMiE51sBKpy9djrTkY8r219alCPAN',
 			keyword: values,
-            countryCode: code,
-            size: 20,
+      countryCode: code,
+      size: 20,
+      page:page,
 		}
   })
 }
+let obiektApi;
+console.log(obiektApi);
+function cos(){
+}
 
 
+let page;
 function showResults(resp) {
     if (resp.data.page.totalElements == 0) {
         Notiflix.Notify.failure("Sorry, there are no events matching your search query. Please try again.");
     } else {
+        console.log(resp);
+        if (resp.data.page.totalElements > 0){
+          let totalPages = resp.data.page.totalPages;
+          page = resp.data.page.number+1;
+          console.log(totalPages);
+          console.log(page);
+          paginacja(totalPages, page);
+        }
         const divOfEvents = document.querySelector(".main-field");
         divOfEvents.innerHTML = "";
         for (const event of resp.data._embedded.events) {
@@ -99,4 +115,72 @@ function showResults(resp) {
             divOfEvents.append(singleEvent);
         }
     }
+}
+
+const pagiUl = document.querySelector("#pagination");
+const btnPrev = document.querySelector("#prev");
+const nextId = document.querySelector("#next");
+
+// btnPrev.addEventListener("click", ()=>{
+//   paginacja(totalPages, page-1)
+// });
+
+// nextId.addEventListener("click", ()=>{
+//   paginacja(totalPages, page+1)
+// });
+
+function paginacja(totalPages, page){
+
+  let liTag = '';
+  let activeLi;
+  let beforePages = page;
+  let afterPages = page + 1;
+  if(page > 1){
+    liTag += `<li class="pagination__rect btn-prev" id="prev"><span><i class="fas fa-angle-left"></i></span></li>`;
+    console.log("powyżej liczby stron");
+  }
+  if(page > 2){
+    liTag += `<li class="pagination__rect dots"><span>1</span></li>`;
+  }
+if(page == totalPages){
+  beforePages = beforePages -2;
+} else if(page == totalPages -1){
+  beforePages = beforePages -1;
+}
+
+if(page == 1){
+  afterPages = afterPages +2;
+} else if(page == 2){
+  afterPages = afterPages +1;
+  }
+
+  for (let pageLength = beforePages; pageLength <= afterPages; pageLength++){
+    if(pageLength > totalPages){
+      continue;
+    }
+    if(pageLength == -1){
+      pageLength = pageLength +1;
+    }
+
+    if(page == pageLength){
+        activeLi = "active";
+    } else{
+      activeLi = "";
+    }
+      liTag += `<li class="pagination__rect numb ${activeLi}"><span>${pageLength}</span></li>`;
+  }
+
+  if(page < totalPages -1){
+    if(page <totalPages -2){
+        liTag += `<li class="pagination__rect dots"><span>...</span></li>`;
+    }
+    liTag += `<li class="pagination__rect dots"><span>${totalPages}</span></li>`;
+  }
+
+  if(page < totalPages) {
+    liTag += `<li class="pagination__rect btn-next" id="next"><span><i class="fas fa-angle-right"></i></span></li>`;
+    console.log("poniżej");
+    
+  }
+  pagiUl.innerHTML = liTag;
 }

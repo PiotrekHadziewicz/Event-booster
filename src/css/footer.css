@@ -2,7 +2,7 @@
 .pagination {
   width: 233px;
   height: 30px;
-  background-color: rgb(78, 67, 67);
+  /* background-color: rgb(78, 67, 67); */
   display: flex;
   justify-content: center;
   margin: 50px auto;
@@ -10,8 +10,8 @@
 
 .pagination__rect {
   width: 30px;
-  height: 30px;
-  background-color: rgb(32, 36, 32);
+  /* height: 50px; */
+  /* background-color: rgb(32, 36, 32); */
   line-height: 30px;
   text-align: center;
   font-family: 'Montserrat';
@@ -19,6 +19,25 @@
   font-weight: 400;
   font-size: 16px;
   color: #FFFFFF;
+  list-style: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.pagination__rect:focus,.pagination__rect:hover,
+.active
+{
+  border: 1px solid #DC56C5;
+  color: #DC56C5;
+  box-sizing: border-box;
+  border-radius: 10px 0px;
+}
+
+
+.fas{
+  /* display: flex; */
+  /* width: 80px; */
+  /* align-items: center; */
+  /* justify-content: center; */
 }
 
 .pagination__rect:not(:last-child) {

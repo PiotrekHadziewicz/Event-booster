@@ -26,6 +26,9 @@ function closeModal(event) {
   $modal.hidden = true;
 }
 
+
+
+
 setInterval(() => {
   $mainEvents.addEventListener('click', openModal);
   if($closeModalBtn)
