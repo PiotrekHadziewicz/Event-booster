@@ -32,13 +32,16 @@
   border-radius: 10px 0px;
 }
 
-
-.fas{
-  /* display: flex; */
-  /* width: 80px; */
-  /* align-items: center; */
-  /* justify-content: center; */
+.emoji{
+  color: red;
 }
+
+/* .fas{
+  display: flex;
+  width: 80px;
+  align-items: center;
+  justify-content: center;
+} */
 
 .pagination__rect:not(:last-child) {
   margin-right: 4px;
