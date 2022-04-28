@@ -20,8 +20,10 @@ loadCountries.addEventListener('change', function (e) {
     countryId = e.target.value;
 });
 
+let page=0;
+
 // api domyślnie: US
-axiosQuery(searchValue, countryId)
+axiosQuery(searchValue, countryId, page)
         .then(resp => {
             showResults(resp);
             
@@ -57,23 +59,17 @@ async function axiosQuery(values, code, page) {
 		}
   })
 }
-let obiektApi;
-console.log(obiektApi);
-function cos(){
-}
 
-
-let page;
 function showResults(resp) {
     if (resp.data.page.totalElements == 0) {
         Notiflix.Notify.failure("Sorry, there are no events matching your search query. Please try again.");
     } else {
-        console.log(resp);
+        // console.log(resp);
         if (resp.data.page.totalElements > 0){
           let totalPages = resp.data.page.totalPages;
-          page = resp.data.page.number+1;
-          console.log(totalPages);
-          console.log(page);
+          page = resp.data.page.number;
+          // console.log(totalPages);
+          // console.log(page);
           paginacja(totalPages, page);
         }
         const divOfEvents = document.querySelector(".main-field");
@@ -118,29 +114,26 @@ function showResults(resp) {
 }
 
 const pagiUl = document.querySelector("#pagination");
-const btnPrev = document.querySelector("#prev");
-const nextId = document.querySelector("#next");
 
-// btnPrev.addEventListener("click", ()=>{
-//   paginacja(totalPages, page-1)
-// });
-
-// nextId.addEventListener("click", ()=>{
-//   paginacja(totalPages, page+1)
-// });
 
 function paginacja(totalPages, page){
-
   let liTag = '';
   let activeLi;
   let beforePages = page;
   let afterPages = page + 1;
-  if(page > 1){
-    liTag += `<li class="pagination__rect btn-prev" id="prev"><span><i class="fas fa-angle-left"></i></span></li>`;
-    console.log("powyżej liczby stron");
-  }
-  if(page > 2){
+  // if(page > 0){
+  //   liTag += `<li class="pagination__rect btn-prev" id="prev"><span><i class="fas fa-angle-left"></i></span></li>`;
+  //   // console.log("strzałka w lewa powyżej 1");
+  // }
+  if(page >= 1){
     liTag += `<li class="pagination__rect dots"><span>1</span></li>`;
+  }
+  if(page >= 2){
+    liTag += `<li class="pagination__rect dots"><span>2</span></li>`;
+    if(page > 2){ //if page value is greater than 3 then add this (...) after the first li or page
+      liTag += `<li class="pagination__rect dots"><span>...</span></li>`;
+    }
+    // console.log("widoczne powyżej 2 strony");
   }
 if(page == totalPages){
   beforePages = beforePages -2;
@@ -148,8 +141,8 @@ if(page == totalPages){
   beforePages = beforePages -1;
 }
 
-if(page == 1){
-  afterPages = afterPages +2;
+if(page == 0){
+  afterPages = afterPages +3;
 } else if(page == 2){
   afterPages = afterPages +1;
   }
@@ -158,8 +151,8 @@ if(page == 1){
     if(pageLength > totalPages){
       continue;
     }
-    if(pageLength == -1){
-      pageLength = pageLength +1;
+    if(pageLength == 0){
+      pageLength = pageLength;
     }
 
     if(page == pageLength){
@@ -167,7 +160,8 @@ if(page == 1){
     } else{
       activeLi = "";
     }
-      liTag += `<li class="pagination__rect numb ${activeLi}"><span>${pageLength}</span></li>`;
+      liTag += `<li class="pagination__rect numb ${activeLi}"><span>${pageLength +1}</span></li>`;
+      // console.log("aktywne pole strony");
   }
 
   if(page < totalPages -1){
@@ -177,10 +171,56 @@ if(page == 1){
     liTag += `<li class="pagination__rect dots"><span>${totalPages}</span></li>`;
   }
 
-  if(page < totalPages) {
-    liTag += `<li class="pagination__rect btn-next" id="next"><span><i class="fas fa-angle-right"></i></span></li>`;
-    console.log("poniżej");
+  // if(page < totalPages) {
+  //   liTag += `<li class="pagination__rect btn-next" id="next"><span><i class="fas fa-angle-right"></i></span></li>`;
+  //   // console.log("strzałka w prawo powyżej totalPages");
     
-  }
+  // }
   pagiUl.innerHTML = liTag;
 }
+
+const btnPrev = document.querySelector("#prev");
+const nextId = document.querySelector("#next");
+
+pagiUl.addEventListener("click", showClickMsg);
+
+
+
+
+function showClickMsg (ev) {
+
+  // console.log(ev.currentTarget);
+  // console.log(ev.target);
+  // console.log(page);
+  // console.log(Number(ev.target.textContent));
+
+
+if(Number(ev.target.textContent) === page+2){
+  page+=1;
+  axiosQuery(searchValue, countryId, page)
+        .then(resp => {
+            showResults(resp);
+            
+        })
+        .catch(error => { 
+            console.log(error);
+        });  
+
+}else if(Number(ev.target.textContent) === Number(ev.target.textContent)){
+  page=Number(ev.target.textContent)-1;
+  axiosQuery(searchValue, countryId, page)
+  .then(resp => {
+      showResults(resp);
+      
+  })
+  .catch(error => { 
+      console.log(error);
+  }); 
+}
+
+  // console.log(page);
+  // console.log("koniec");
+
+
+  
+};
